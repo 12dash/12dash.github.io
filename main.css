@@ -4,5 +4,22 @@
 
 .name {
     font-size: x-large;
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+}
+.projects{
+    h3{
+        margin: 0px 0px 30px
+    }
+    .project{
+        margin: 0px 0px 30px
+    }   
+}
+p{
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
     font-weight: lighter;
 }
