@@ -3,28 +3,72 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Soham Dandapath · Applied AI Engineer</title>
-<meta name="description" content="Soham Dandapath, Applied AI Engineer at C3 AI. Building RAG-based LLM systems and time-series forecasting that ship to production." />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230c0c0d'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' fill='%23e0b984' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+<title>Soham Dandapath</title>
+<meta name="description" content="Soham Dandapath, an applied AI engineer at C3 AI. RAG-based LLM systems and time-series forecasting, from research to production." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23121313'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' font-weight='700' fill='%23eaeae7' text-anchor='middle'%3Esd%3C/text%3E%3C/svg%3E" />
+
+<!-- Canonical + theme (update the domain if you publish elsewhere) -->
+<link rel="canonical" href="https://12dash.github.io/" />
+<meta name="theme-color" content="#121313" />
+
+<!-- Open Graph (LinkedIn, Slack, iMessage, Facebook) -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Soham Dandapath" />
+<meta property="og:title" content="Soham Dandapath, Applied AI Engineer" />
+<meta property="og:description" content="RAG-based LLM systems and time-series forecasting, from research to production." />
+<meta property="og:url" content="https://12dash.github.io/" />
+<meta property="og:image" content="https://12dash.github.io/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Soham Dandapath, Applied AI Engineer" />
+<meta name="twitter:description" content="RAG-based LLM systems and time-series forecasting, from research to production." />
+<meta name="twitter:image" content="https://12dash.github.io/og.png" />
+
+<!-- Structured data for search engines -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Soham Dandapath",
+  "url": "https://12dash.github.io/",
+  "jobTitle": "Applied AI Engineer",
+  "worksFor": { "@type": "Organization", "name": "C3 AI" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Columbia University" },
+    { "@type": "CollegeOrUniversity", "name": "Nanyang Technological University" }
+  ],
+  "email": "mailto:soham.dandapath@gmail.com",
+  "sameAs": [
+    "https://github.com/12dash",
+    "https://www.linkedin.com/in/sohamdandapath"
+  ]
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <noscript><style>.fade{opacity:1 !important;transform:none !important;}</style></noscript>
 
 <style>
   :root {
-    --bg: #0c0c0d;
-    --panel: rgba(255,255,255,0.025);
-    --text: #f0eee9;
-    --body: #c8c4ba;
-    --dim: #a4a097;
-    --faint: #8f8a80;
-    --rule: rgba(255,255,255,0.12);
-    --accent: #e0b984;
-    --accent-soft: rgba(224,185,132,0.10);
-    --serif: "Fraunces", Georgia, "Times New Roman", serif;
-    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --bg: #121313;
+    --surface: #191a1a;
+    --surface-2: #20211f;
+    --text: #eaeae7;
+    --body: #b6b6b0;
+    --dim: #918f88;
+    --faint: #8a877f;
+    --rule: rgba(255,255,255,0.08);
+    --rule-2: rgba(255,255,255,0.13);
+    --accent: #cdc7b8;
+    --accent-line: rgba(205,199,184,0.45);
+    --serif: "Newsreader", Georgia, serif;
+    --sans: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -32,358 +76,331 @@
     font-family: var(--sans);
     background: var(--bg);
     color: var(--body);
-    line-height: 1.65;
+    line-height: 1.72;
     font-size: 17px;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
+  body::before {
+    content: ""; position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
   a { color: var(--text); text-decoration: none; }
   a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
-  .m { color: var(--text); font-weight: 500; }
+  .em { color: var(--text); font-weight: 500; }
 
-  /* ===================== LAYOUT ===================== */
-  .layout {
-    max-width: 1080px; margin: 0 auto; padding: 0 36px;
-    display: flex; gap: 72px; align-items: flex-start;
-  }
-  .side { position: sticky; top: 0; width: 42%; height: 100vh;
-    display: flex; flex-direction: column; justify-content: space-between;
-    padding: 96px 0 64px; }
-  main { width: 58%; padding: 96px 0 0; }
+  #progress { position: fixed; top: 0; left: 0; height: 2px; width: 0%; z-index: 60; background: var(--accent); opacity: 0.8; }
 
-  /* ===================== SIDE (intro + nav) ===================== */
-  h1 { font-family: var(--serif); font-weight: 600; font-size: 2.9rem;
-    letter-spacing: -0.02em; line-height: 1.04; color: var(--text); }
-  .role { margin-top: 12px; font-size: 1.18rem; color: var(--text); font-weight: 500; }
-  .tag { margin-top: 16px; font-size: 1.02rem; color: var(--dim); max-width: 22em; line-height: 1.55; }
-  .meta-line { margin-top: 18px; font-size: 0.9rem; color: var(--faint); }
+  /* ===================== SHELL ===================== */
+  .shell { max-width: 1180px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 64px);
+    display: grid; grid-template-columns: 296px 1fr; gap: clamp(48px, 7vw, 100px); align-items: start; }
 
-  .nav { margin-top: 48px; display: flex; flex-direction: column; gap: 4px; }
-  .nav-link {
-    display: inline-flex; align-items: center; gap: 14px;
-    color: var(--faint); font-size: 0.8rem; font-weight: 500;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    padding: 6px 0; width: max-content; transition: color .2s;
-  }
-  .nav-line { display: inline-block; width: 26px; height: 1.5px; background: var(--faint); transition: width .25s, background .25s; }
-  .nav-link:hover, .nav-link.active { color: var(--text); }
-  .nav-link:hover .nav-line, .nav-link.active .nav-line { width: 46px; background: var(--accent); }
+  /* sidebar */
+  .side { position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column;
+    justify-content: space-between; padding: 66px 0 56px; }
+  .brand h1 { font-family: var(--mono); font-weight: 500; font-size: 1.35rem; color: var(--text); letter-spacing: -0.01em; }
+  .brand .role { margin-top: 14px; font-size: 0.96rem; color: var(--body); }
+  .brand .who { margin-top: 12px; font-size: 0.93rem; color: var(--dim); max-width: 24em; line-height: 1.6; }
+  .brand .now { margin-top: 20px; font-family: var(--mono); font-size: 0.76rem; color: var(--dim); max-width: 24em; line-height: 1.7; }
+  .brand .now .k { color: var(--accent); margin-right: 8px; }
+  .brand .now .k::before { content: "●"; display: inline-block; margin-right: 6px; font-size: 0.7em; vertical-align: 1px; animation: nowpulse 2.6s ease-in-out infinite; }
+  @keyframes nowpulse { 0%,100% { opacity: 0.45; } 50% { opacity: 1; } }
+  .nav { margin-top: 36px; display: flex; flex-direction: column; gap: 3px; }
+  .nav a { display: inline-flex; align-items: center; gap: 13px; width: max-content;
+    color: var(--faint); font-family: var(--mono); font-size: 0.77rem; letter-spacing: 0.02em; padding: 6px 0; transition: color .2s; }
+  .nav a .ln { width: 18px; height: 1px; background: var(--faint); transition: width .25s, background .25s; }
+  .nav a:hover, .nav a.active { color: var(--text); }
+  .nav a:hover .ln, .nav a.active .ln { width: 38px; background: var(--accent); }
+  .side-foot { font-size: 0.84rem; color: var(--faint); }
+  .side-foot .row { display: flex; gap: 18px; margin-bottom: 13px; }
+  .side-foot .row a { display: inline-block; color: var(--dim); transition: color .2s, transform .15s; }
+  .side-foot .row a:hover { color: var(--text); transform: translateY(-2px); }
+  .side-foot .hi a { color: var(--accent); border-bottom: 1px solid var(--accent-line); padding-bottom: 1px; }
 
-  .side-bottom { display: flex; flex-direction: column; gap: 22px; }
-  .socials { display: flex; gap: 18px; }
-  .socials a { color: var(--dim); transition: color .2s, transform .15s; }
-  .socials a:hover { color: var(--accent); transform: translateY(-2px); }
-  .socials svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.7; }
-  .btn {
-    display: inline-flex; align-items: center; gap: 9px; width: max-content;
-    padding: 11px 20px; border-radius: 10px; font-size: 0.95rem; font-weight: 500;
-    color: var(--bg); background: var(--accent);
-    transition: transform .15s, box-shadow .2s;
-  }
-  .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 30px -12px rgba(224,185,132,0.6); }
+  /* main */
+  main { padding: 66px 0 0; min-width: 0; }
+  .intro { font-family: var(--serif); font-weight: 400; font-size: clamp(1.6rem, 2.9vw, 2.25rem);
+    line-height: 1.38; color: var(--text); letter-spacing: -0.005em; max-width: 20em; }
+  .intro::before { content: ""; display: block; width: 0; height: 2px; background: var(--accent); opacity: 0.65; border-radius: 2px; margin-bottom: 30px; transition: width .9s cubic-bezier(.2,.7,.2,1) .15s; }
+  .intro.show::before { width: 44px; }
+  .intro .soft { color: var(--dim); }
 
-  /* ===================== SECTIONS ===================== */
-  section { padding-bottom: 88px; scroll-margin-top: 80px; }
-  .label { font-family: var(--serif); font-size: 1.5rem; color: var(--text); margin-bottom: 28px; font-weight: 500; }
-  main p { color: var(--body); }
-  main p + p { margin-top: 16px; }
-  .inline-link { color: var(--accent); border-bottom: 1px solid rgba(224,185,132,0.4); transition: border-color .2s; }
-  .inline-link:hover { border-color: var(--accent); }
+  section { padding: 60px 0; border-top: 1px solid var(--rule); margin-top: 60px; scroll-margin-top: 40px; }
+  section:first-of-type { border-top: none; margin-top: 56px; padding-top: 0; }
+  .kicker { font-family: var(--mono); font-size: 0.73rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--faint); margin-bottom: 22px; }
+  .kicker .num { color: var(--accent); margin-right: 12px; }
+  .h { font-family: var(--serif); font-weight: 400; font-size: clamp(1.5rem, 3vw, 1.95rem); color: var(--text); line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 22px; }
+  .prose { font-size: 1.06rem; color: var(--body); max-width: 42em; }
+  .prose + .prose { margin-top: 16px; }
+  .prose .em { color: var(--text); font-weight: 500; }
+  .prose a { color: var(--accent); border-bottom: 1px solid var(--accent-line); transition: border-color .2s; }
+  .prose a:hover { border-color: var(--accent); }
 
-  /* focus areas */
-  .focus { margin-top: 26px; display: grid; gap: 14px; }
-  .focus-item { padding-left: 18px; border-left: 2px solid var(--rule); }
-  .focus-item b { color: var(--text); font-weight: 500; font-family: var(--serif); font-size: 1.05rem; }
-  .focus-item span { display: block; color: var(--dim); font-size: 0.94rem; margin-top: 2px; }
+  /* stats */
+  .stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin: 4px 0 40px; }
+  .stat { position: relative; overflow: hidden; padding: 18px 16px; border: 1px solid var(--rule); border-radius: 13px; background: var(--surface); transition: border-color .25s, transform .25s; }
+  .stat:hover { border-color: var(--rule-2); transform: translateY(-2px); }
+  .stat .num { font-family: var(--serif); font-size: 1.6rem; color: var(--text); line-height: 1; }
+  .stat .desc { margin-top: 9px; font-size: 0.77rem; color: var(--dim); line-height: 1.4; }
 
-  /* ===================== IMPACT STATS ===================== */
-  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .stat { padding: 20px; border: 1px solid var(--rule); border-radius: 14px; background: var(--panel); }
-  .stat .num { font-family: var(--serif); font-size: 1.9rem; font-weight: 600; color: var(--accent); line-height: 1; }
-  .stat .desc { margin-top: 8px; font-size: 0.88rem; color: var(--dim); line-height: 1.4; }
-
-  /* ===================== EXPERIENCE ===================== */
-  .job { display: grid; grid-template-columns: 110px 1fr; gap: 18px; padding: 22px 0; border-top: 1px solid var(--rule); }
-  .job:first-of-type { border-top: none; padding-top: 0; }
-  .job-date { color: var(--faint); font-size: 0.82rem; padding-top: 4px; font-variant-numeric: tabular-nums; }
-  .job-title { font-family: var(--serif); font-size: 1.12rem; color: var(--text); }
-  .job-org a { color: var(--accent); border-bottom: 1px solid rgba(224,185,132,0.4); transition: border-color .2s; }
+  /* experience */
+  .job { display: grid; grid-template-columns: 128px 1fr; gap: 22px; padding: 26px 0; border-top: 1px solid var(--rule); }
+  .job:first-of-type { border-top: none; padding-top: 4px; }
+  .job-when { font-family: var(--mono); font-size: 0.78rem; color: var(--faint); padding-top: 5px; letter-spacing: 0.02em; }
+  .job-title { font-family: var(--serif); font-size: 1.2rem; color: var(--text); }
+  .job-org a { color: var(--accent); border-bottom: 1px solid var(--accent-line); transition: border-color .2s; }
   .job-org a:hover { border-color: var(--accent); }
-  .job p { color: var(--body); font-size: 0.95rem; margin-top: 8px; }
+  .job p { color: var(--body); font-size: 0.97rem; margin-top: 10px; line-height: 1.62; }
 
-  /* ===================== PROJECTS ===================== */
-  .work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .proj {
-    display: flex; flex-direction: column; padding: 22px;
-    border: 1px solid var(--rule); border-radius: 14px; background: var(--panel);
-    transition: border-color .2s, transform .2s, background .2s;
-  }
-  .proj:hover { border-color: var(--accent); transform: translateY(-3px); background: var(--accent-soft); }
-  .proj-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
-  .proj-title { font-family: var(--serif); font-size: 1.1rem; color: var(--text); transition: color .2s; }
-  .proj:hover .proj-title { color: var(--accent); }
-  .proj .arrow { color: var(--accent); font-size: 0.85rem; transition: transform .2s; }
-  .proj:hover .arrow { transform: translate(3px,-3px); }
-  .proj p { color: var(--body); font-size: 0.92rem; margin-top: 8px; flex-grow: 1; }
-  .proj-meta { color: var(--faint); font-size: 0.8rem; margin-top: 12px; }
-  .all-link { display: inline-block; margin-top: 22px; color: var(--accent); font-size: 0.95rem; border-bottom: 1px solid rgba(224,185,132,0.4); transition: border-color .2s; }
-  .all-link:hover { border-color: var(--accent); }
+  /* projects */
+  .pj { position: relative; overflow: hidden; display: block; padding: 26px 20px; margin-inline: -20px; border-top: 1px solid var(--rule); border-radius: 12px; transition: background .25s; }
+  .pj:first-of-type { border-top: none; padding-top: 4px; }
+  .pj:hover { background: var(--surface); }
+  .pj > *, .stat > * { position: relative; z-index: 1; }
+  .pj::after, .stat::after { content: ""; position: absolute; inset: 0; z-index: 0; opacity: 0; transition: opacity .3s; pointer-events: none;
+    background: radial-gradient(260px circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,0.06), transparent 60%); }
+  .pj:hover::after, .stat:hover::after { opacity: 1; }
+  .pj-top { display: flex; align-items: baseline; gap: 12px; }
+  .pj-title { font-family: var(--serif); font-size: 1.24rem; color: var(--text); transition: color .2s; }
+  .star-tag { font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--accent); border: 1px solid var(--accent-line); border-radius: 999px; padding: 3px 9px; }
+  .pj:hover .pj-title { color: var(--accent); }
+  .pj-arrow { color: var(--accent); font-size: 0.85rem; transition: transform .2s; }
+  .pj:hover .pj-arrow { transform: translate(3px,-3px); }
+  .pj-meta { margin-left: auto; font-family: var(--mono); font-size: 0.72rem; color: var(--faint); letter-spacing: 0.02em; white-space: nowrap; }
+  .pj p { color: var(--body); font-size: 0.97rem; margin-top: 9px; max-width: 44em; line-height: 1.62; }
+  .all { display: inline-flex; align-items: center; gap: 7px; margin-top: 28px; color: var(--accent);
+    font-family: var(--mono); font-size: 0.82rem; border-bottom: 1px solid var(--accent-line); transition: gap .2s, border-color .2s; }
+  .all:hover { gap: 13px; border-color: var(--accent); }
 
-  /* ===================== SKILLS ===================== */
-  .skill-row { display: grid; grid-template-columns: 130px 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid var(--rule); }
-  .skill-row:first-of-type { border-top: none; padding-top: 0; }
-  .skill-cat { color: var(--faint); font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; padding-top: 2px; }
-  .skill-list { color: var(--text); font-size: 0.96rem; }
+  /* education */
+  .edu-row { display: grid; grid-template-columns: 128px 1fr auto; gap: 22px; align-items: baseline; padding: 16px 0; border-top: 1px solid var(--rule); }
+  .edu-row:first-child { border-top: none; }
+  .edu-when { font-family: var(--mono); font-size: 0.78rem; color: var(--faint); }
+  .edu-what { color: var(--body); font-size: 1rem; }
+  .edu-what .deg { color: var(--text); }
+  .edu-what a { color: var(--text); border-bottom: 1px solid var(--rule-2); transition: border-color .2s; }
+  .edu-what a:hover { border-color: var(--accent); }
+  .edu-where { font-size: 0.8rem; color: var(--faint); text-align: right; }
 
-  /* ===================== EDUCATION ===================== */
-  .edu { display: grid; grid-template-columns: 110px 1fr; gap: 18px; padding: 18px 0; border-top: 1px solid var(--rule); }
-  .edu:first-of-type { border-top: none; padding-top: 0; }
-  .edu-date { color: var(--faint); font-size: 0.82rem; padding-top: 3px; font-variant-numeric: tabular-nums; }
-  .edu-school { font-family: var(--serif); font-size: 1.08rem; color: var(--text); }
-  .edu-school a { border-bottom: 1px solid var(--rule); transition: border-color .2s; }
-  .edu-school a:hover { border-color: var(--accent); }
-  .edu p { color: var(--dim); font-size: 0.92rem; margin-top: 3px; }
+  .closing p { font-family: var(--serif); font-size: clamp(1.2rem, 2vw, 1.5rem); color: var(--dim); max-width: 26em; line-height: 1.5; }
+  .closing a { color: var(--accent); border-bottom: 1px solid var(--accent-line); transition: border-color .2s; }
+  .closing a:hover { border-color: var(--accent); }
 
-  /* ===================== CLOSING + FOOTER ===================== */
-  .closing { padding: 8px 0 40px; }
-  .closing h2 { font-family: var(--serif); font-weight: 500; font-size: 1.9rem; color: var(--text); margin-bottom: 14px; }
-  .closing p { color: var(--body); max-width: 32em; margin-bottom: 24px; }
-  footer { padding: 32px 0 80px; border-top: 1px solid var(--rule); }
-  footer .quip { font-family: var(--serif); font-style: italic; font-size: 1rem; color: var(--dim); margin-bottom: 10px; }
-  footer .copy { color: var(--faint); font-size: 0.84rem; }
+  footer { margin-top: 60px; padding: 38px 0 64px; border-top: 1px solid var(--rule); }
+  .foot-links { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 24px; }
+  .foot-links a { font-family: var(--mono); font-size: 0.82rem; color: var(--dim); border-bottom: 1px solid transparent; transition: color .2s, border-color .2s; }
+  .foot-links a:hover { color: var(--text); border-color: var(--accent); }
+  footer .quip { font-family: var(--serif); font-style: italic; font-size: 1rem; color: var(--dim); margin-bottom: 10px; max-width: 42em; }
+  footer .copy { font-family: var(--mono); color: var(--faint); font-size: 0.76rem; }
 
   /* reveal */
-  .fade { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+  .fade { opacity: 0; transform: translateY(18px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
   .fade.show { opacity: 1; transform: none; }
+  .stats .stat:nth-child(2){transition-delay:.06s}
+  .stats .stat:nth-child(3){transition-delay:.12s}
+  .stats .stat:nth-child(4){transition-delay:.18s}
 
-  /* ===================== RESPONSIVE ===================== */
+  /* responsive */
   @media (max-width: 900px) {
-    .layout { flex-direction: column; gap: 0; padding: 0 28px; }
-    .side { position: static; width: 100%; height: auto; padding: 72px 0 8px; justify-content: flex-start; }
-    main { width: 100%; padding: 40px 0 0; }
+    .shell { grid-template-columns: 1fr; gap: 0; }
+    .side { position: static; height: auto; padding: 60px 0 0; }
     .nav { display: none; }
-    .side-bottom { margin-top: 32px; flex-direction: row; align-items: center; justify-content: space-between; }
+    .side-foot { margin-top: 30px; }
+    main { padding: 40px 0 0; }
   }
   @media (max-width: 560px) {
-    .layout { padding: 0 22px; }
-    h1 { font-size: 2.3rem; }
-    .stats, .work-grid { grid-template-columns: 1fr; }
-    .job, .edu { grid-template-columns: 1fr; gap: 4px; }
-    .job-date, .edu-date { padding-top: 0; }
-    .skill-row { grid-template-columns: 1fr; gap: 4px; }
-    .side-bottom { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .job, .edu-row { grid-template-columns: 1fr; gap: 4px; }
+    .job-when { padding-top: 0; }
+    .pj-meta { margin-left: 0; }
+    .pj-top { flex-wrap: wrap; }
+    .edu-where { text-align: left; }
   }
   @media (prefers-reduced-motion: reduce) {
     .fade { transition: none; opacity: 1; transform: none; }
+    .intro::before { width: 44px; transition: none; }
+    .brand .now .k::before { animation: none; }
     html { scroll-behavior: auto; }
   }
 </style>
 </head>
 <body>
-<div class="layout">
+<div id="progress"></div>
 
-  <!-- ===================== SIDE: intro + nav ===================== -->
+<div class="shell">
+
+  <!-- ===================== SIDEBAR ===================== -->
   <header class="side">
-    <div>
-      <h1>Soham Dandapath</h1>
+    <div class="brand fade">
+      <h1>soham dandapath</h1>
       <p class="role">Applied AI Engineer at C3 AI</p>
-      <p class="tag">I turn messy, real-world business problems into AI systems that ship to production.</p>
-      <p class="meta-line">Redwood City, CA · MS @ Columbia</p>
-
+      <p class="who">RAG-based LLM systems and time-series forecasting, taken from research to production.</p>
+      <p class="now"><span class="k">Now</span> building RAG systems at C3 and re-reading the diffusion papers.</p>
       <nav class="nav" aria-label="Sections">
-        <a class="nav-link" href="#about"><span class="nav-line"></span>About</a>
-        <a class="nav-link" href="#experience"><span class="nav-line"></span>Experience</a>
-        <a class="nav-link" href="#work"><span class="nav-line"></span>Selected Work</a>
-        <a class="nav-link" href="#skills"><span class="nav-line"></span>Skills</a>
-        <a class="nav-link" href="#education"><span class="nav-line"></span>Education</a>
+        <a href="#about"><span class="ln"></span>about</a>
+        <a href="#work"><span class="ln"></span>work</a>
+        <a href="#projects"><span class="ln"></span>projects</a>
       </nav>
     </div>
-
-    <div class="side-bottom">
-      <div class="socials">
-        <a href="https://github.com/12dash" target="_blank" rel="noopener" aria-label="GitHub">
-          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/sohamdandapath" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a href="mailto:soham.dandapath@gmail.com" aria-label="Email">
-          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-        </a>
+    <div class="side-foot fade">
+      <div class="row">
+        <a href="https://github.com/12dash" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/sohamdandapath" target="_blank" rel="noopener">LinkedIn</a>
       </div>
-      <a class="btn" href="mailto:soham.dandapath@gmail.com">Get in touch</a>
+      <p class="hi">or <a href="mailto:soham.dandapath@gmail.com">say hi</a>.</p>
     </div>
   </header>
 
-  <!-- ===================== MAIN: content ===================== -->
+  <!-- ===================== MAIN ===================== -->
   <main>
+
+    <p class="intro fade">
+      I build AI systems that make it out of the notebook and into production,
+      <span class="soft">and I build things from scratch to understand how they really work.</span>
+    </p>
 
     <!-- ABOUT -->
     <section id="about" class="fade">
-      <h2 class="label">About</h2>
-      <p>
-        I'm an Applied AI Engineer at C3 AI and a relentless AI enthusiast. Most
-        of my work lives where applied research meets solid engineering: I take
-        ideas from problem framing all the way to production, mostly RAG-based
-        LLM systems and probabilistic time-series forecasting on C3's agentic
-        platform.
+      <p class="kicker"><span class="num">01</span>About</p>
+      <h2 class="h">Mostly, I want to know how things actually work.</h2>
+      <p class="prose">
+        I'm an applied AI engineer at C3 AI. My path ran through Singapore and New
+        York before the Bay Area: a BE in Computer Science from
+        <a href="https://www.ntu.edu.sg" target="_blank" rel="noopener">NTU</a>, a stretch of
+        internships from Shopee to Seagate, then an MS at
+        <a href="https://www.cs.columbia.edu" target="_blank" rel="noopener">Columbia</a> with a focus in
+        machine learning. The constant across all of it has been a stubborn kind of
+        curiosity, the sort where I'll re-implement an idea from scratch just to
+        find out how it actually works.
       </p>
-      <p>
-        I care about models that are interpretable, deployments that are
-        reproducible, and tooling that makes the next person's work easier. Here
-        is where I focus:
+      <p class="prose">
+        These days that curiosity has a job. At C3 I take AI from a vague business
+        problem all the way to something running in production, mostly
+        <span class="em">RAG-based LLM systems</span> and
+        <span class="em">probabilistic time-series forecasting</span>. I care about
+        three things in particular: models you can interpret, deployments you can
+        reproduce, and tooling that makes the next engineer's job easier. Outside
+        work I'm usually deep in a paper I'm trying to understand, which is where
+        most of my <a href="https://github.com/12dash" target="_blank" rel="noopener">GitHub</a> repos come from.
       </p>
-      <div class="focus">
-        <div class="focus-item"><b>RAG &amp; LLM systems</b><span>Low-latency, policy-compliant retrieval and generation over enterprise data.</span></div>
-        <div class="focus-item"><b>Time-series forecasting</b><span>Probabilistic, hierarchical, explainable models that drive real decisions.</span></div>
-        <div class="focus-item"><b>ML tooling &amp; deployment</b><span>Reproducible pipelines and toolchains that get models to production fast.</span></div>
-      </div>
     </section>
 
-    <!-- IMPACT -->
-    <section id="impact" class="fade" aria-label="Impact by the numbers">
-      <div class="stats">
-        <div class="stat"><div class="num">$0.8B</div><div class="desc">Est. annual impact, enterprise forecasting program</div></div>
-        <div class="stat"><div class="num">$7M+</div><div class="desc">Value delivered across customer forecasting apps</div></div>
-        <div class="stat"><div class="num">Hours&nbsp;&rarr;&nbsp;min</div><div class="desc">Faster deploys from internal tooling I built</div></div>
-        <div class="stat"><div class="num">30+</div><div class="desc">Open-source repositories on GitHub</div></div>
-      </div>
-    </section>
+    <!-- WORK & IMPACT -->
+    <section id="work" class="fade">
+      <p class="kicker"><span class="num">02</span>Work</p>
+      <h2 class="h">What I've worked on.</h2>
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="fade">
-      <h2 class="label">Experience</h2>
-
-      <div class="job">
-        <div class="job-date">2024 - Present</div>
+      <div class="job fade">
+        <div class="job-when">2024 - now</div>
         <div>
           <div class="job-title">Applied AI Engineer <span class="job-org">· <a href="https://c3.ai" target="_blank" rel="noopener">C3 AI</a></span></div>
           <p>
-            Lead applied ML and LLM projects end-to-end for global enterprises,
-            currently an enterprise forecasting program for a major semiconductor
-            customer with <span class="m">~$0.8B</span> estimated annual impact.
-            Shipped a RAG document-retrieval system, demand and yield forecasting
-            apps, and built an internal deployment toolchain that cut deploys from
-            <span class="m">hours to minutes</span>. I also mentor data scientists
-            across teams.
+            I lead applied ML and LLM projects end to end for global enterprises.
+            Right now I'm running a forecasting program for a major semiconductor
+            customer, partnering with stakeholders from technical discovery through
+            production, with an estimated <span class="em">~$0.8B</span> in annual
+            business impact. Along the way I've shipped a RAG-based document-retrieval
+            system for low-latency, policy-compliant search across internal docs;
+            demand and yield forecasting apps that delivered <span class="em">$2.3M</span>
+            and roughly <span class="em">$5M</span> in annual value for two customers;
+            and an internal Python deployment toolchain that cut deploys from
+            <span class="em">hours to minutes</span>. I also own release management
+            for our forecasting packages and mentor data scientists across teams.
           </p>
         </div>
       </div>
 
-      <div class="job">
-        <div class="job-date">2023</div>
+      <div class="job fade">
+        <div class="job-when">2023</div>
         <div>
           <div class="job-title">Data Science Intern <span class="job-org">· <a href="https://c3.ai" target="_blank" rel="noopener">C3 AI</a></span></div>
           <p>
-            Built an out-of-the-box hierarchical forecasting and reconciliation
-            system (MinT/ERM, DeepVAR-Hierarchical) and added Integrated
-            Gradients explainability to probabilistic forecasts.
+            Shipped an out-of-the-box hierarchical forecasting and reconciliation
+            system, implementing post-hoc MinT/ERM and intrinsic DeepVAR-Hierarchical
+            approaches for cross-level coherence, and integrated probabilistic
+            forecasts with Integrated Gradients explainability so the outputs were
+            both uncertainty-aware and interpretable.
           </p>
         </div>
       </div>
 
-      <div class="job">
-        <div class="job-date">2022</div>
+      <div class="job fade">
+        <div class="job-when">2022</div>
         <div>
           <div class="job-title">Data Scientist <span class="job-org">· <a href="https://www.charleskeith.com" target="_blank" rel="noopener">Charles &amp; Keith</a></span></div>
           <p>
-            Tree-based sales forecasting, a <span class="m">95%+ accuracy</span>
-            image-similarity engine for product matching, and an order-management
-            app that cut costs and stockouts.
+            Built a tree-based sales forecasting model for seasonal planning, a
+            <span class="em">95%+ accuracy</span> image-similarity engine for product
+            matching, and an order-management web app that improved accuracy while
+            cutting manufacturing costs and stockouts.
           </p>
         </div>
       </div>
 
-      <div class="job">
-        <div class="job-date">2020 - 2021</div>
+      <div class="job fade">
+        <div class="job-when">2020 - 21</div>
         <div>
-          <div class="job-title">Earlier <span class="job-org">· <a href="https://shopee.com" target="_blank" rel="noopener">Shopee</a>, <a href="https://www.seagate.com" target="_blank" rel="noopener">Seagate</a>, Outstrip, <a href="https://cogniable.com" target="_blank" rel="noopener">CogniAble</a></span></div>
+          <div class="job-title">Earlier internships <span class="job-org">· <a href="https://shopee.com" target="_blank" rel="noopener">Shopee</a>, <a href="https://www.seagate.com" target="_blank" rel="noopener">Seagate</a>, Outstrip, <a href="https://cogniable.com" target="_blank" rel="noopener">CogniAble</a></span></div>
           <p>
-            Data pipelines on Airflow/HDFS, ML for hard-drive test-time
-            prediction, KPI dashboards, and an I3D action-recognition model for
-            early autism screening.
+            A run of hands-on ML and data work: optimizing Airflow/HDFS pipelines and
+            a compression tool that cut storage by <span class="em">90%+</span> at
+            Shopee; neural-net and tree models to forecast hard-drive test time at
+            Seagate; a React and Rails KPI dashboard at Outstrip; and a two-stream I3D
+            action-recognition model on AWS SageMaker for early autism screening at
+            CogniAble.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- SELECTED WORK -->
-    <section id="work" class="fade">
-      <h2 class="label">Selected Work</h2>
-      <div class="work-grid">
-        <a class="proj" href="https://github.com/12dash/GenerativeModel" target="_blank" rel="noopener">
-          <div class="proj-head"><span class="proj-title">Generative Models</span><span class="arrow">↗</span></div>
-          <p>From-scratch GANs, VAEs, and normalizing flows. A hands-on tour of how generative models actually work.</p>
-          <div class="proj-meta">Jupyter · PyTorch</div>
-        </a>
-        <a class="proj" href="https://github.com/12dash/VisualAttention-ViT" target="_blank" rel="noopener">
-          <div class="proj-head"><span class="proj-title">Vision Transformer</span><span class="arrow">↗</span></div>
-          <p>A clean implementation of visual attention / ViT for image classification.</p>
-          <div class="proj-meta">Jupyter · PyTorch</div>
-        </a>
-        <a class="proj" href="https://github.com/12dash/NetworkScience" target="_blank" rel="noopener">
-          <div class="proj-head"><span class="proj-title">Co-Authorship Network</span><span class="arrow">↗</span></div>
-          <p>A network-science study of academic co-authorship built on DBLP data. My most-starred repo.</p>
-          <div class="proj-meta">Jupyter · Network analysis · ★ 22</div>
-        </a>
-        <a class="proj" href="https://github.com/12dash/DiffusionModel" target="_blank" rel="noopener">
-          <div class="proj-head"><span class="proj-title">Diffusion Model</span><span class="arrow">↗</span></div>
-          <p>An implementation and experimentation playground for diffusion-style generative models.</p>
-          <div class="proj-meta">Python · PyTorch</div>
-        </a>
-      </div>
-      <a class="all-link" href="https://github.com/12dash" target="_blank" rel="noopener">See all 30 repositories on GitHub ↗</a>
-    </section>
+    <!-- PROJECTS -->
+    <section id="projects" class="fade">
+      <p class="kicker"><span class="num">03</span>Projects</p>
+      <h2 class="h">Most of these began as "I don't really get this, let me build it."</h2>
 
-    <!-- SKILLS -->
-    <section id="skills" class="fade">
-      <h2 class="label">Skills &amp; Tools</h2>
-      <div class="skill-row">
-        <div class="skill-cat">Languages</div>
-        <div class="skill-list">Python · SQL · JavaScript</div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-cat">ML / AI</div>
-        <div class="skill-list">RAG &amp; LLM systems · Time-series forecasting · Probabilistic ML · Distributed training · PyTorch</div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-cat">Infra / Tools</div>
-        <div class="skill-list">AWS / SageMaker · Airflow · CI/CD · Git</div>
-      </div>
-    </section>
+      <a class="pj fade" href="https://github.com/12dash/GenerativeModel" target="_blank" rel="noopener">
+        <div class="pj-top"><span class="pj-title">Generative Models</span><span class="pj-arrow">↗</span><span class="pj-meta">Jupyter · PyTorch</span></div>
+        <p>GANs, VAEs, and normalizing flows built side by side. I wanted to feel the trade-offs between them rather than read about them: how adversarial training differs from a variational bound differs from an invertible flow. It became one of my favourite references.</p>
+      </a>
 
-    <!-- EDUCATION -->
-    <section id="education" class="fade">
-      <h2 class="label">Education</h2>
-      <div class="edu">
-        <div class="edu-date">2022 - 2023</div>
-        <div>
-          <div class="edu-school"><a href="https://www.cs.columbia.edu" target="_blank" rel="noopener">Columbia University</a></div>
-          <p>MS, Computer Science · focus in Machine Learning</p>
-        </div>
-      </div>
-      <div class="edu">
-        <div class="edu-date">2018 - 2022</div>
-        <div>
-          <div class="edu-school"><a href="https://www.ntu.edu.sg" target="_blank" rel="noopener">Nanyang Technological University</a></div>
-          <p>BE, Computer Science</p>
-        </div>
-      </div>
+      <a class="pj fade" href="https://github.com/12dash/DiffusionModel" target="_blank" rel="noopener">
+        <div class="pj-top"><span class="pj-title">Diffusion Model</span><span class="pj-arrow">↗</span><span class="pj-meta">Python · PyTorch</span></div>
+        <p>An implementation sandbox for diffusion models. I sat with the forward noising and reverse denoising process, step by step, until the math stopped feeling like magic and started feeling inevitable.</p>
+      </a>
+
+      <a class="pj fade" href="https://github.com/12dash/VisualAttention-ViT" target="_blank" rel="noopener">
+        <div class="pj-top"><span class="pj-title">Vision Transformer</span><span class="pj-arrow">↗</span><span class="pj-meta">Jupyter · PyTorch</span></div>
+        <p>A clean, from-scratch ViT for image classification. The interesting part was watching just how much data attention needs before it overtakes a solid convolutional baseline.</p>
+      </a>
+
+      <a class="pj fade" href="https://github.com/12dash/TransformerAttention" target="_blank" rel="noopener">
+        <div class="pj-top"><span class="pj-title">Transformer from Scratch</span><span class="pj-arrow">↗</span><span class="pj-meta">Jupyter · PyTorch</span></div>
+        <p>The transformer rebuilt from first principles: attention, positional encodings, the lot. Re-deriving it by hand stuck far better than reading the paper a fourth time.</p>
+      </a>
+
+      <a class="pj fade" href="https://github.com/12dash/NetworkScience" target="_blank" rel="noopener">
+        <div class="pj-top"><span class="pj-title">Co-Authorship Network</span><span class="star-tag">most-starred</span><span class="pj-arrow">↗</span><span class="pj-meta">Network analysis · ★ 22</span></div>
+        <p>A network-science study of academic co-authorship built on DBLP data for a course at NTU: graph construction, centrality, and community detection on a real, messy dataset. Quietly my most-starred repo.</p>
+      </a>
+
+      <a class="all" href="https://github.com/12dash" target="_blank" rel="noopener">more on GitHub ↗</a>
     </section>
 
     <!-- CLOSING -->
     <section class="closing fade">
-      <h2>Let's build something.</h2>
-      <p>
-        I'm always up for interesting problems and good conversations, whether
-        that's a role, a collaboration, or just comparing notes on AI.
-      </p>
-      <a class="btn" href="mailto:soham.dandapath@gmail.com">Say hello</a>
+      <p>This page grows as I do, so it's never really finished. If something here
+      resonates, my <a href="mailto:soham.dandapath@gmail.com">inbox</a> is open.</p>
     </section>
 
     <footer>
+      <div class="foot-links">
+        <a href="https://github.com/12dash" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/sohamdandapath" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:soham.dandapath@gmail.com">Email</a>
+      </div>
       <p class="quip">Made with Claude. Because if an AI engineer won't trust an AI to build his homepage, who will?</p>
-      <p class="copy">© <span id="year"></span> Soham Dandapath · still 100% human, allegedly</p>
+      <p class="copy">© <span id="year"></span> soham dandapath · still 100% human, allegedly</p>
     </footer>
 
   </main>
@@ -392,25 +409,44 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  /* reveal on scroll */
+  const bar = document.getElementById('progress');
+  function onScroll() {
+    const h = document.documentElement;
+    bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight || 1) * 100) + '%';
+  }
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
   const io = new IntersectionObserver((es) => {
     es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
-  }, { threshold: 0.08 });
+  }, { threshold: 0.1 });
   document.querySelectorAll('.fade').forEach(el => io.observe(el));
 
-  /* active section in side nav */
-  const links = [...document.querySelectorAll('.nav-link')];
+  const links = [...document.querySelectorAll('.nav a')];
   const map = {};
   links.forEach(l => { const id = l.getAttribute('href').slice(1); const s = document.getElementById(id); if (s) map[id] = l; });
   const navObs = new IntersectionObserver((es) => {
     es.forEach(e => {
       if (e.isIntersecting) {
-        links.forEach(l => l.classList.remove('active'));
-        if (map[e.target.id]) map[e.target.id].classList.add('active');
+        links.forEach(l => { l.classList.remove('active'); l.removeAttribute('aria-current'); });
+        const a = map[e.target.id];
+        if (a) { a.classList.add('active'); a.setAttribute('aria-current', 'true'); }
       }
     });
-  }, { rootMargin: "-30% 0px -60% 0px" });
+  }, { rootMargin: "-25% 0px -65% 0px" });
   Object.keys(map).forEach(id => navObs.observe(document.getElementById(id)));
+
+  /* cursor-follow spotlight on cards and project rows */
+  document.querySelectorAll('.pj, .stat').forEach(el => {
+    el.addEventListener('mousemove', e => {
+      const r = el.getBoundingClientRect();
+      el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  /* a small hello for the curious */
+  console.log("%cHey, you opened the console. 👋\nIf you're poking around, you're exactly the kind of person I'd like to hear from: soham.dandapath@gmail.com",
+    "font-family:monospace;font-size:12px;line-height:1.6;color:#cdc7b8;");
 </script>
 </body>
 </html>
