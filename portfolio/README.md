@@ -1,70 +1,91 @@
 # Soham Dandapath — Portfolio
 
-A Next.js (App Router) personal site: a dark, quiet, editorial portfolio with
-scroll-driven reveals, a generative hero backdrop, animated impact counters, and
-cursor-follow spotlights. Built to deploy on Vercel.
+A multi-page Next.js (App Router) personal site: a dark, quiet, editorial
+portfolio with project case studies, a writing section, a ⌘K command palette,
+a light/dark toggle, cross-page transitions, and a generative hero backdrop.
+Built to deploy on Vercel.
 
 ## Stack
 
-- **Next.js 14** (App Router) + **React 18** + **TypeScript**
-- **Tailwind CSS** (configured, used alongside a bespoke CSS design system in `globals.css`)
-- **Framer Motion** for animation
-- Google Fonts: Newsreader (serif), Hanken Grotesk (sans), JetBrains Mono
+- **Next.js 14** (App Router) · **React 18** · **TypeScript**
+- **Framer Motion** — reveals, hero, page transitions
+- **react-markdown** + **remark-gfm** — case-study / post prose
+- **@vercel/analytics** — privacy-friendly page analytics
+- **Tailwind CSS** (configured) alongside a bespoke CSS design system
+- Fonts: Newsreader (serif), Hanken Grotesk (sans), JetBrains Mono
 
 ## Run locally
 
 ```bash
 npm install
 npm run dev      # http://localhost:3000
-npm run build    # production build
+npm run build    # production build (statically prerenders every page)
 ```
 
-## Deploy to Vercel (about 2 minutes)
+## Deploy to Vercel
 
 1. Push this folder to a GitHub repo.
-2. Go to [vercel.com/new](https://vercel.com/new) and import the repo.
-3. Vercel auto-detects Next.js — no config needed. Click **Deploy**.
-4. (Optional) Add a custom domain in the project's **Settings → Domains**.
+2. Import it at [vercel.com/new](https://vercel.com/new) — Next.js is auto-detected.
+3. Deploy. (If it lives in a subfolder, set **Root Directory** accordingly.)
 
-If this project lives in a subfolder of your repo, set **Root Directory** to
-that subfolder in Vercel's project settings.
+> Update `site.url` in `src/lib/data.ts` to your real domain so canonical/OG
+> links resolve correctly.
 
-> After deploying, update `site.url` in `src/lib/data.ts` to your real domain so
-> the canonical URL, Open Graph, and Twitter link previews point to the right
-> place.
-
-## Editing
-
-Almost all content lives in **`src/lib/data.ts`** — name, role, the "Now" note,
-stats, jobs, projects, skills, and education. Edit that file and the site
-updates everywhere.
+## Routes
 
 ```
-src/
-  app/
-    layout.tsx     # <head>, fonts, SEO metadata, JSON-LD structured data
-    page.tsx       # section layout / composition
-    globals.css    # design system (colors, type, components, responsive)
-  components/
-    Sidebar.tsx       # sticky sidebar + scroll-spy nav
-    Hero.tsx          # word-by-word intro reveal
-    HeroCanvas.tsx    # generative "attention graph" backdrop (canvas)
-    Counter.tsx       # animated count-up for impact stats
-    Reveal.tsx        # scroll-into-view fade/slide wrapper
-    Spotlight.tsx     # cursor-follow glow on cards
-    ScrollProgress.tsx# top scroll-progress bar
-    FooterYear.tsx    # current year
-  lib/
-    data.ts        # ← all editable content
-public/
-  og.png           # social share image
+/                      Home — hero, about, work, projects, writing, stack, contact
+/projects              All projects (index)
+/projects/[slug]       Project case study (statically generated per project)
+/writing               All posts (index)
+/writing/[slug]        A post (statically generated per post)
 ```
 
-To add a project, add an entry to the `projects` array in `src/lib/data.ts`.
-To add a skill group, edit `skills`. Same pattern for `jobs` and `education`.
+## Editing — everything is data
 
-## Notes
+| What | Where |
+| --- | --- |
+| Name, role, bio, stats, jobs, skills, education | `src/lib/data.ts` |
+| Projects + case studies | `src/content/projects.ts` |
+| Writing / notes | `src/content/writing.ts` |
+| Colours, type, layout | `src/app/globals.css` |
+| SEO, fonts, theme bootstrap | `src/app/layout.tsx` |
 
-- Every animation respects `prefers-reduced-motion` (reduced motion → static).
-- Dark theme, fully responsive, WCAG-AA contrast.
-- The hero canvas caps node count and devicePixelRatio for performance.
+### Add a project case study
+
+Append an object to `projects` in `src/content/projects.ts`. Each `sections[].body`
+is Markdown. Set `featured: true` to surface it on the home page. The route
+`/projects/<slug>` is generated automatically.
+
+### Add a writing post
+
+Append an object to `posts` in `src/content/writing.ts`. `body` is Markdown.
+Set `draft: true` to keep it unpublished.
+
+## Features
+
+- **⌘K command palette** (`Cmd/Ctrl+K`) — jump to any page, project, or post; toggle theme.
+- **Light / dark theme** — persisted, no flash on load, system-independent (defaults dark).
+- **Page transitions** — quiet cross-page fade via `app/template.tsx`.
+- **Generative hero** — a theme-aware "attention graph" canvas that reacts to the cursor.
+- **Animated impact counters**, scroll reveals, scroll-progress bar, spotlight cards.
+- **SEO** — per-page metadata, Open Graph, Twitter cards, JSON-LD Person schema.
+- Every animation respects `prefers-reduced-motion`.
+
+## Components
+
+```
+src/components/
+  Sidebar.tsx        sticky sidebar + scroll-spy (home)
+  Hero.tsx           word-by-word intro
+  HeroCanvas.tsx     generative backdrop (theme-aware)
+  CommandPalette.tsx ⌘K palette
+  Controls.tsx       floating top-right controls
+  ThemeToggle.tsx    light/dark switch
+  Markdown.tsx       react-markdown wrapper (internal links via next/link)
+  Counter.tsx        animated count-up
+  Reveal.tsx         scroll-into-view wrapper
+  Spotlight.tsx      cursor-follow card glow
+  ScrollProgress.tsx top progress bar
+  FooterYear.tsx     current year
+```

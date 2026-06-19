@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { intro } from "@/lib/data";
 import HeroCanvas from "./HeroCanvas";
 
@@ -12,16 +12,16 @@ export default function Hero() {
 
   const container = {
     hidden: {},
-    show: { transition: { staggerChildren: 0.045, delayChildren: 0.25 } },
+    show: { transition: { staggerChildren: 0.008, delayChildren: 0.03 } },
   };
-  const word: Variants | undefined = reduce
-    ? undefined
+  const word = reduce
+    ? {}
     : {
-        hidden: { opacity: 0, y: "0.5em" },
+        hidden: { opacity: 0, y: "0.35em" },
         show: {
           opacity: 1,
           y: 0,
-          transition: { duration: 0.55, ease: [0.2, 0.7, 0.2, 1] },
+          transition: { duration: 0.28, ease: [0.2, 0.7, 0.2, 1] },
         },
       };
 
@@ -39,7 +39,7 @@ export default function Hero() {
           className="rule"
           initial={reduce ? false : { width: 0 }}
           animate={{ width: 44 }}
-          transition={{ duration: 0.9, ease: [0.2, 0.7, 0.2, 1], delay: 0.15 }}
+          transition={{ duration: 0.6, ease: [0.2, 0.7, 0.2, 1], delay: 0.05 }}
         />
         {leadWords.map((w, i) => (
           <motion.span

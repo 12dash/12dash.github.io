@@ -7,18 +7,21 @@ export const site = {
   handle: "soham dandapath",
   role: "Applied AI Engineer at C3 AI",
   who: "RAG-based LLM systems and time-series forecasting, taken from research to production.",
+  // One-line proof, surfaced above the fold in the sidebar.
+  highlight: "≈$0.8B impact shipped · $7.3M delivered across two customers",
   now: "building RAG systems at C3 and re-reading the diffusion papers.",
   email: "soham.dandapath@gmail.com",
   url: "https://soham-dandapath.vercel.app",
   github: "https://github.com/12dash",
   linkedin: "https://www.linkedin.com/in/sohamdandapath",
+  // Drop a PDF at public/Soham_Dandapath_Resume.pdf (or point this elsewhere).
+  resume: "/Soham_Dandapath_Resume.pdf",
 };
 
 export const nav = [
   { id: "about", label: "about" },
   { id: "work", label: "work" },
   { id: "projects", label: "projects" },
-  { id: "stack", label: "stack" },
   { id: "contact", label: "contact" },
 ];
 
@@ -77,48 +80,6 @@ export const jobs: Job[] = [
     title: "Earlier internships",
     org: "Shopee, Seagate, Outstrip, CogniAble",
     body: "A run of hands-on ML and data work: optimizing Airflow/HDFS pipelines and a compression tool that cut storage by 90%+ at Shopee; neural-net and tree models to forecast hard-drive test time at Seagate; a React and Rails KPI dashboard at Outstrip; and a two-stream I3D action-recognition model on AWS SageMaker for early autism screening at CogniAble.",
-  },
-];
-
-export type Project = {
-  title: string;
-  url: string;
-  meta: string;
-  tag?: string;
-  body: string;
-};
-
-export const projects: Project[] = [
-  {
-    title: "Generative Models",
-    url: "https://github.com/12dash/GenerativeModel",
-    meta: "Jupyter · PyTorch",
-    body: "GANs, VAEs, and normalizing flows built side by side. I wanted to feel the trade-offs between them rather than read about them: how adversarial training differs from a variational bound differs from an invertible flow. It became one of my favourite references.",
-  },
-  {
-    title: "Diffusion Model",
-    url: "https://github.com/12dash/DiffusionModel",
-    meta: "Python · PyTorch",
-    body: "An implementation sandbox for diffusion models. I sat with the forward noising and reverse denoising process, step by step, until the math stopped feeling like magic and started feeling inevitable.",
-  },
-  {
-    title: "Vision Transformer",
-    url: "https://github.com/12dash/VisualAttention-ViT",
-    meta: "Jupyter · PyTorch",
-    body: "A clean, from-scratch ViT for image classification. The interesting part was watching just how much data attention needs before it overtakes a solid convolutional baseline.",
-  },
-  {
-    title: "Transformer from Scratch",
-    url: "https://github.com/12dash/TransformerAttention",
-    meta: "Jupyter · PyTorch",
-    body: "The transformer rebuilt from first principles: attention, positional encodings, the lot. Re-deriving it by hand stuck far better than reading the paper a fourth time.",
-  },
-  {
-    title: "Co-Authorship Network",
-    url: "https://github.com/12dash/NetworkScience",
-    meta: "Network analysis · ★ 22",
-    tag: "most-starred",
-    body: "A network-science study of academic co-authorship built on DBLP data: graph construction, centrality, and community detection on a real, messy dataset. Quietly my most-starred repo.",
   },
 ];
 

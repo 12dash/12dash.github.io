@@ -1,10 +1,18 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { site } from "@/lib/data";
+import SiteHeader from "@/components/SiteHeader";
+import CommandPalette from "@/components/CommandPalette";
+import ScrollProgress from "@/components/ScrollProgress";
+import Spotlight from "@/components/Spotlight";
 import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: "Soham Dandapath",
+  title: {
+    default: "Soham Dandapath",
+    template: "%s · Soham Dandapath",
+  },
   description:
     "Soham Dandapath, an applied AI engineer at C3 AI. RAG-based LLM systems and time-series forecasting, from research to production.",
   alternates: { canonical: "/" },
@@ -46,9 +54,12 @@ const jsonLd = {
   sameAs: [site.github, site.linkedin],
 };
 
+// No-flash theme bootstrap: runs before paint.
+const themeScript = `(function(){try{var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
@@ -56,12 +67,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
           rel="stylesheet"
         />
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <ScrollProgress />
+        <SiteHeader />
+        <Spotlight />
+        <CommandPalette />
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { site, nav } from "@/lib/data";
 
 export default function Sidebar() {
@@ -29,8 +29,8 @@ export default function Sidebar() {
     hidden: {},
     show: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
   };
-  const item: Variants | undefined = reduce
-    ? undefined
+  const item = reduce
+    ? {}
     : {
         hidden: { opacity: 0, x: -10 },
         show: { opacity: 1, x: 0, transition: { duration: 0.6 } },
@@ -50,6 +50,9 @@ export default function Sidebar() {
         </motion.p>
         <motion.p className="who" variants={item}>
           {site.who}
+        </motion.p>
+        <motion.p className="highlight" variants={item}>
+          {site.highlight}
         </motion.p>
         <motion.p className="now" variants={item}>
           <span className="k">Now</span>
@@ -83,6 +86,9 @@ export default function Sidebar() {
           </a>
           <a href={site.linkedin} target="_blank" rel="noopener">
             LinkedIn
+          </a>
+          <a href={site.resume} target="_blank" rel="noopener">
+            Résumé
           </a>
         </div>
         <p className="hi">

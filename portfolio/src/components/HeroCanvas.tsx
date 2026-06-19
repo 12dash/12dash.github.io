@@ -24,6 +24,25 @@ export default function HeroCanvas() {
     let raf = 0;
     const mouse = { x: -9999, y: -9999 };
 
+    // Read the current --accent and convert to an "r, g, b" string so the
+    // backdrop stays visible across light/dark themes.
+    const readAccent = (): string => {
+      const v = getComputedStyle(document.documentElement)
+        .getPropertyValue("--accent")
+        .trim();
+      const m = v.match(/^#?([0-9a-f]{6})$/i);
+      if (m) {
+        const n = parseInt(m[1], 16);
+        return `${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}`;
+      }
+      return "205, 199, 184";
+    };
+    let accent = readAccent();
+    const onTheme = () => {
+      accent = readAccent();
+    };
+    window.addEventListener("themechange", onTheme);
+
     type Node = { x: number; y: number; vx: number; vy: number; r: number };
     let nodes: Node[] = [];
 
@@ -49,7 +68,6 @@ export default function HeroCanvas() {
       }));
     };
 
-    const accent = "205, 199, 184"; // --accent rgb
     const LINK = 132;
 
     const draw = () => {
@@ -101,7 +119,18 @@ export default function HeroCanvas() {
         }
       }
 
+      if (running) raf = requestAnimationFrame(draw);
+    };
+
+    let running = false;
+    const start = () => {
+      if (running) return;
+      running = true;
       raf = requestAnimationFrame(draw);
+    };
+    const stop = () => {
+      running = false;
+      cancelAnimationFrame(raf);
     };
 
     const onMove = (e: MouseEvent) => {
@@ -117,21 +146,42 @@ export default function HeroCanvas() {
     resize();
     window.addEventListener("resize", resize);
 
+    let onVisibility: (() => void) | null = null;
+    let io: IntersectionObserver | null = null;
+
     if (reduce) {
-      // single static frame
+      // single static frame, no loop
       draw();
-      cancelAnimationFrame(raf);
     } else {
       window.addEventListener("mousemove", onMove, { passive: true });
       window.addEventListener("mouseout", onLeave);
-      raf = requestAnimationFrame(draw);
+
+      let inView = true;
+      const sync = () => {
+        if (inView && !document.hidden) start();
+        else stop();
+      };
+      onVisibility = sync;
+      document.addEventListener("visibilitychange", sync);
+      io = new IntersectionObserver(
+        (entries) => {
+          inView = entries[0]?.isIntersecting ?? true;
+          sync();
+        },
+        { threshold: 0 }
+      );
+      io.observe(canvas);
+      sync();
     }
 
     return () => {
-      cancelAnimationFrame(raf);
+      stop();
       window.removeEventListener("resize", resize);
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("mouseout", onLeave);
+      window.removeEventListener("themechange", onTheme);
+      if (onVisibility) document.removeEventListener("visibilitychange", onVisibility);
+      if (io) io.disconnect();
     };
   }, []);
 
