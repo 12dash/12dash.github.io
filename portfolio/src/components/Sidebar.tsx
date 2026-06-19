@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import Image from "next/image";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { site, nav } from "@/lib/data";
 
 export default function Sidebar() {
@@ -25,11 +26,11 @@ export default function Sidebar() {
     return () => obs.disconnect();
   }, []);
 
-  const container = {
+  const container: Variants = {
     hidden: {},
     show: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
   };
-  const item = reduce
+  const item: Variants = reduce
     ? {}
     : {
         hidden: { opacity: 0, x: -10 },
@@ -44,15 +45,21 @@ export default function Sidebar() {
         initial={reduce ? false : "hidden"}
         animate="show"
       >
+        <motion.div variants={item} className="avatar">
+          <Image
+            src="/profile.jpeg"
+            alt={site.handle}
+            width={128}
+            height={128}
+            priority
+          />
+        </motion.div>
         <motion.h1 variants={item}>{site.handle}</motion.h1>
         <motion.p className="role" variants={item}>
           {site.role}
         </motion.p>
         <motion.p className="who" variants={item}>
           {site.who}
-        </motion.p>
-        <motion.p className="highlight" variants={item}>
-          {site.highlight}
         </motion.p>
         <motion.p className="now" variants={item}>
           <span className="k">Now</span>

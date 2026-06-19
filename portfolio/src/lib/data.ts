@@ -7,11 +7,9 @@ export const site = {
   handle: "soham dandapath",
   role: "Applied AI Engineer at C3 AI",
   who: "RAG-based LLM systems and time-series forecasting, taken from research to production.",
-  // One-line proof, surfaced above the fold in the sidebar.
-  highlight: "≈$0.8B impact shipped · $7.3M delivered across two customers",
   now: "building RAG systems at C3 and re-reading the diffusion papers.",
   email: "soham.dandapath@gmail.com",
-  url: "https://soham-dandapath.vercel.app",
+  url: "https://sohamdandapath.com",
   github: "https://github.com/12dash",
   linkedin: "https://www.linkedin.com/in/sohamdandapath",
   // Drop a PDF at public/Soham_Dandapath_Resume.pdf (or point this elsewhere).

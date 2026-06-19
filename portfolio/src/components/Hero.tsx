@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { intro } from "@/lib/data";
 import HeroCanvas from "./HeroCanvas";
 
@@ -10,11 +10,11 @@ export default function Hero() {
   const leadWords = intro.lead.split(" ");
   const softWords = intro.soft.split(" ");
 
-  const container = {
+  const container: Variants = {
     hidden: {},
     show: { transition: { staggerChildren: 0.008, delayChildren: 0.03 } },
   };
-  const word = reduce
+  const word: Variants = reduce
     ? {}
     : {
         hidden: { opacity: 0, y: "0.35em" },
