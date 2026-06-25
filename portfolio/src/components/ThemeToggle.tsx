@@ -5,12 +5,12 @@ import { useEffect, useState } from "react";
 type Theme = "dark" | "light";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("dark");
+  const [theme, setTheme] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const current =
-      (document.documentElement.getAttribute("data-theme") as Theme) || "dark";
+      (document.documentElement.getAttribute("data-theme") as Theme) || "light";
     setTheme(current);
     setMounted(true);
   }, []);
