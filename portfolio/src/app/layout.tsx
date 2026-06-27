@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s · Soham Dandapath",
   },
   description:
-    "Soham Dandapath, an applied AI engineer at C3 AI. RAG-based LLM systems and time-series forecasting, from research to production.",
+    "Soham Dandapath, a customer-facing senior data scientist at C3 AI who turns ambiguous business problems into forecasting models that run in production.",
   alternates: { canonical: "/" },
   icons: {
     icon: [
@@ -27,15 +27,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Soham Dandapath",
-    title: "Soham Dandapath, Applied AI Engineer",
-    description: "RAG-based LLM systems and time-series forecasting, from research to production.",
+    title: "Soham Dandapath, Senior Data Scientist",
+    description: "Customer-facing data scientist who turns ambiguous business problems into forecasting models that run in production.",
     url: "/",
     images: [{ url: "/og.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Soham Dandapath, Applied AI Engineer",
-    description: "RAG-based LLM systems and time-series forecasting, from research to production.",
+    title: "Soham Dandapath, Senior Data Scientist",
+    description: "Customer-facing data scientist who turns ambiguous business problems into forecasting models that run in production.",
     images: ["/og.png"],
   },
 };
@@ -49,7 +49,7 @@ const jsonLd = {
   "@type": "Person",
   name: site.name,
   url: site.url,
-  jobTitle: "Applied AI Engineer",
+  jobTitle: "Senior Data Scientist",
   worksFor: { "@type": "Organization", name: "C3 AI" },
   alumniOf: [
     { "@type": "CollegeOrUniversity", name: "Columbia University" },

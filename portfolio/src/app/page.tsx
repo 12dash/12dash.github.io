@@ -1,9 +1,8 @@
 import Link from "next/link";
-import { about, education, jobs, site, stats } from "@/lib/data";
+import { about, education, jobs, site } from "@/lib/data";
 import { featuredProjects, restProjects } from "@/content/projects";
 import Sidebar from "@/components/Sidebar";
 import Hero from "@/components/Hero";
-import Counter from "@/components/Counter";
 import Reveal from "@/components/Reveal";
 import FooterYear from "@/components/FooterYear";
 
@@ -25,7 +24,7 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.05}>
             <p className="prose">
-              I&apos;m an applied AI engineer at C3 AI. My path ran through
+              I&apos;m a senior data scientist at C3 AI. My path ran through
               Singapore and New York before the Bay Area: a BE in Computer
               Science from{" "}
               <a href="https://www.ntu.edu.sg" target="_blank" rel="noopener">
@@ -36,18 +35,19 @@ export default function Home() {
                 Columbia
               </a>{" "}
               with a focus in machine learning. The constant across all of it
-              has been a stubborn kind of curiosity &mdash; the sort where
-              I&apos;ll re-implement an idea from scratch just to find out how it
-              actually works.
+              has been a stubborn kind of curiosity, the sort where I&apos;ll
+              re-implement an idea from scratch just to find out how it actually
+              works.
             </p>
             <p className="prose">
-              These days that curiosity has a job. At C3 I take AI from a vague
-              business problem all the way to something running in production,
-              mostly <span className="em">RAG-based LLM systems</span> and{" "}
-              <span className="em">probabilistic time-series forecasting</span>.
-              I care about three things in particular: models you can interpret,
-              deployments you can reproduce, and tooling that makes the next
-              engineer&apos;s job easier.
+              These days that curiosity has a job. At C3 I sit with customers,
+              translate a vague business problem into something a model can
+              answer, and carry it all the way to production. That&apos;s mostly{" "}
+              <span className="em">probabilistic time-series forecasting</span>,
+              with some <span className="em">RAG-based LLM systems</span> along
+              the way. I care about three things in particular: models you can
+              interpret, deployments you can reproduce, and tooling that makes
+              the next engineer&apos;s job easier.
             </p>
           </Reveal>
         </section>
@@ -61,42 +61,32 @@ export default function Home() {
             <h2 className="h">What I&apos;ve worked on.</h2>
           </Reveal>
 
-          <Reveal delay={0.04}>
-            <div className="stats">
-              {stats.map((s, i) => (
-                <div className="stat" key={i}>
-                  <div className="num">
-                    <Counter value={s.value} prefix={s.prefix} suffix={s.suffix} />
+          <div className="timeline">
+            {jobs.map((j, i) => (
+              <Reveal key={i} delay={i === 0 ? 0 : 0.04}>
+                <div className={`job${i === 0 ? " first current" : ""}`}>
+                  <span className="job-dot" aria-hidden="true" />
+                  <div className="job-when">{j.when}</div>
+                  <div className="job-main">
+                    <div className="job-title">
+                      {j.title}{" "}
+                      <span className="job-org">
+                        ·{" "}
+                        {j.orgUrl ? (
+                          <a href={j.orgUrl} target="_blank" rel="noopener">
+                            {j.org}
+                          </a>
+                        ) : (
+                          j.org
+                        )}
+                      </span>
+                    </div>
+                    <p>{j.body}</p>
                   </div>
-                  <div className="desc">{s.label}</div>
                 </div>
-              ))}
-            </div>
-          </Reveal>
-
-          {jobs.map((j, i) => (
-            <Reveal key={i} delay={i === 0 ? 0 : 0.03}>
-              <div className={`job${i === 0 ? " first" : ""}`}>
-                <div className="job-when">{j.when}</div>
-                <div>
-                  <div className="job-title">
-                    {j.title}{" "}
-                    <span className="job-org">
-                      ·{" "}
-                      {j.orgUrl ? (
-                        <a href={j.orgUrl} target="_blank" rel="noopener">
-                          {j.org}
-                        </a>
-                      ) : (
-                        j.org
-                      )}
-                    </span>
-                  </div>
-                  <p>{j.body}</p>
-                </div>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            ))}
+          </div>
         </section>
 
         {/* PROJECTS */}

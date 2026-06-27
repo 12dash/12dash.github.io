@@ -5,7 +5,7 @@ import { projects } from "@/content/projects";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Case studies on generative models, transformers, causal ML, and network science — built to understand, not just to use.",
+    "Case studies on generative models, transformers, causal ML, and network science - built to understand, not just to use.",
 };
 
 export default function ProjectsPage() {
@@ -23,7 +23,7 @@ export default function ProjectsPage() {
         <p className="lede">
           Most of these started as a gap in my own understanding. Each one is a
           short case study: why I built it, what I actually did, and what it
-          taught me — with a link to the code.
+          taught me - with a link to the code.
         </p>
       </header>
 

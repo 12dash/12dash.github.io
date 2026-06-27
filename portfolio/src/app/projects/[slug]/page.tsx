@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { projects, getProject } from "@/content/projects";
 import Markdown from "@/components/Markdown";
+import Reveal from "@/components/Reveal";
+import CaseStudyVisual from "@/components/CaseStudyVisual";
 
 type Params = { params: { slug: string } };
 
@@ -66,31 +68,49 @@ export default function CaseStudy({ params }: Params) {
 
         {p.sections.map((s, i) => (
           <section className="cs-section" key={i}>
-            <h2 className="h">{s.heading}</h2>
-            <Markdown>{s.body}</Markdown>
+            <Reveal>
+              <h2 className="h">{s.heading}</h2>
+              <Markdown>{s.body}</Markdown>
+            </Reveal>
             {s.metrics && (
-              <div className="metric-grid">
-                {s.metrics.map((m, j) => (
-                  <div className="metric" key={j}>
-                    <div className="mv">{m.value}</div>
-                    <div className="ml">{m.label}</div>
-                  </div>
-                ))}
-              </div>
+              <Reveal delay={0.05}>
+                <div className="metric-grid">
+                  {s.metrics.map((m, j) => (
+                    <div className="metric" key={j}>
+                      <div className="mv">{m.value}</div>
+                      <div className="ml">{m.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </Reveal>
             )}
-            {s.note && <div className="note">{s.note}</div>}
+            {s.visual && <CaseStudyVisual kind={s.visual} />}
+            {s.image && (
+              <figure className={`cs-figure${s.image.wide ? " breakout" : ""}`}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={s.image.src} alt={s.image.alt} loading="lazy" />
+                {s.image.caption && <figcaption className="cs-cap">{s.image.caption}</figcaption>}
+              </figure>
+            )}
+            {s.note && (
+              <Reveal delay={0.05}>
+                <div className="note">{s.note}</div>
+              </Reveal>
+            )}
           </section>
         ))}
 
         <div className="cs-section">
-          <div className="takeaways">
-            <h3>What I took away</h3>
-            <ul>
-              {p.takeaways.map((t, i) => (
-                <li key={i}>{t}</li>
-              ))}
-            </ul>
-          </div>
+          <Reveal>
+            <div className="takeaways">
+              <h3>What I took away</h3>
+              <ul>
+                {p.takeaways.map((t, i) => (
+                  <li key={i}>{t}</li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
         </div>
 
         <div className="article-foot">

@@ -16,7 +16,7 @@ export default function NotFound() {
           <Link href="/projects" style={{ borderBottom: "1px solid var(--accent-line)", color: "var(--accent)" }}>
             projects
           </Link>{" "}
-          — or hit ⌘K to jump anywhere.
+          page, or hit ⌘K to jump anywhere.
         </p>
       </header>
     </div>

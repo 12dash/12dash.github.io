@@ -118,11 +118,48 @@ section.first { border-top: none; margin-top: 56px; padding-top: 0; }
 .stat .num { font-family: var(--serif); font-size: 1.6rem; color: var(--text); line-height: 1; }
 .stat .desc { margin-top: 9px; font-size: 0.77rem; color: var(--dim); line-height: 1.4; }
 
-/* experience */
-.job { display: grid; grid-template-columns: 128px 1fr; gap: 22px; padding: 26px 0; border-top: 1px solid var(--rule); }
+/* experience - vertical timeline */
+.timeline { position: relative; margin-top: 4px; }
+/* the rail: a subtle line running down the gutter between dates and content */
+.timeline::before {
+  content: ""; position: absolute; left: 139px; top: 18px; bottom: 28px; width: 1px;
+  background: linear-gradient(var(--accent-line), var(--rule-2) 26%, var(--rule) 92%, transparent);
+  transform-origin: top;
+}
+/* draw the rail as it scrolls into view, where supported and motion is allowed */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .timeline::before {
+      transform: scaleY(0);
+      animation: rail-draw linear both;
+      animation-timeline: view();
+      animation-range: entry 15% cover 55%;
+    }
+  }
+}
+@keyframes rail-draw { to { transform: scaleY(1); } }
+
+.job { position: relative; display: grid; grid-template-columns: 128px 1fr; gap: 22px; padding: 26px 0; border-top: 1px solid var(--rule); }
 .job.first { border-top: none; padding-top: 4px; }
 .job-when { font-family: var(--mono); font-size: 0.78rem; color: var(--faint); padding-top: 5px; letter-spacing: 0.02em; }
 .job-title { font-family: var(--serif); font-size: 1.2rem; color: var(--text); }
+
+/* timeline node */
+.job-dot {
+  position: absolute; left: 139px; top: 34px; transform: translateX(-50%);
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--surface-2); border: 1px solid var(--rule-2); z-index: 1;
+  transition: background 0.3s, border-color 0.3s;
+}
+.job.first .job-dot { top: 18px; }
+.job.current .job-dot { background: var(--accent); border-color: var(--accent); }
+@media (prefers-reduced-motion: no-preference) {
+  .job.current .job-dot { animation: dot-pulse 2.6s ease-in-out infinite; }
+}
+@keyframes dot-pulse {
+  0%, 100% { box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 26%, transparent); }
+  50% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 0%, transparent); }
+}
 .job-org a { color: var(--accent); border-bottom: 1px solid var(--accent-line); transition: border-color 0.2s; }
 .job-org a:hover { border-color: var(--accent); }
 .job p { color: var(--body); font-size: 0.97rem; margin-top: 10px; line-height: 1.62; }
@@ -208,6 +245,7 @@ footer .copy { font-family: var(--mono); color: var(--faint); font-size: 0.76rem
   .stats { grid-template-columns: 1fr 1fr; }
   .job, .edu-row { grid-template-columns: 1fr; gap: 4px; }
   .job-when { padding-top: 0; }
+  .timeline::before, .job-dot { display: none; }
   .pj-meta { margin-left: 0; }
   .pj-top { flex-wrap: wrap; }
   .edu-where { text-align: left; }
@@ -408,7 +446,7 @@ body,
 .page {
   position: relative;
   z-index: 2;
-  max-width: 760px;
+  max-width: 820px;
   margin: 0 auto;
   padding: 0 clamp(22px, 5vw, 44px) 110px;
 }
@@ -466,8 +504,36 @@ body,
 .tech-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
 
 /* section in articles */
-.cs-section { padding: 40px 0 0; }
+.cs-section { padding: 38px 0 0; }
 .cs-section > .h { font-size: clamp(1.3rem, 2.4vw, 1.6rem); margin-bottom: 14px; }
+.cs-section .h { font-size: clamp(1.3rem, 2.4vw, 1.6rem); margin-bottom: 14px; }
+
+/* case-study figures + animated inline visuals */
+.cs-figure { margin: 30px 0 8px; }
+.cs-figure img {
+  width: 100%; height: auto; display: block;
+  border: 1px solid var(--rule); border-radius: 14px;
+  background: var(--surface);
+}
+.cs-svg {
+  width: 100%; height: auto; display: block;
+  border: 1px solid var(--rule); border-radius: 16px;
+  background: var(--surface); padding: 10px 8px;
+}
+.cs-cap {
+  margin-top: 12px; font-size: 0.84rem; color: var(--dim);
+  line-height: 1.55; max-width: 46em; margin-inline: auto; text-align: center;
+}
+/* content breakout: visuals span wider than the reading column to use the page */
+.breakout {
+  width: min(1080px, 95vw);
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.breakout .cs-cap { max-width: 60em; }
+@media (max-width: 1100px) {
+  .breakout { width: 100%; margin-left: 0; transform: none; }
+}
 
 /* metrics grid inside case study */
 .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 22px 0 6px; }

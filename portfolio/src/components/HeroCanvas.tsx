@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 // A quiet generative backdrop: drifting nodes that wire themselves together
-// when close — a nod to attention graphs / message passing. Deliberately low
+// when close - a nod to attention graphs / message passing. Deliberately low
 // contrast so it sits behind the type rather than competing with it.
 export default function HeroCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
