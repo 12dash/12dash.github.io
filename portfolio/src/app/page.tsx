@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { about, education, jobs, site } from "@/lib/data";
+import { about, education, jobs, site, type CompanyGroup } from "@/lib/data";
 import { featuredProjects, restProjects } from "@/content/projects";
 import Sidebar from "@/components/Sidebar";
 import Hero from "@/components/Hero";
@@ -62,28 +62,67 @@ export default function Home() {
           </Reveal>
 
           <div className="timeline">
-            {jobs.map((j, i) => (
+            {jobs.map((entry, i) => (
               <Reveal key={i} delay={i === 0 ? 0 : 0.04}>
-                <div className={`job${i === 0 ? " first current" : ""}`}>
-                  <span className="job-dot" aria-hidden="true" />
-                  <div className="job-when">{j.when}</div>
-                  <div className="job-main">
-                    <div className="job-title">
-                      {j.title}{" "}
-                      <span className="job-org">
-                        ·{" "}
-                        {j.orgUrl ? (
-                          <a href={j.orgUrl} target="_blank" rel="noopener">
-                            {j.org}
-                          </a>
-                        ) : (
-                          j.org
-                        )}
-                      </span>
+                {(entry as CompanyGroup).kind === "group" ? (() => {
+                  const g = entry as CompanyGroup;
+                  return (
+                    <div className={`job company-group${i === 0 ? " first current" : ""}`}>
+                      <span className="job-dot" aria-hidden="true" />
+                      <div className="job-when">{g.when}</div>
+                      <div className="job-main">
+                        <div className="company-header">
+                          {g.orgUrl ? (
+                            <a href={g.orgUrl} target="_blank" rel="noopener" className="company-name">{g.org}</a>
+                          ) : (
+                            <span className="company-name">{g.org}</span>
+                          )}
+                        </div>
+                        <div className="company-roles">
+                          {g.roles.map((role, ri) => (
+                            <div key={ri} className="company-role">
+                              <div className="role-header">
+                                <span className="job-title">{role.title}</span>
+                                <span className="role-when">{role.when}</span>
+                              </div>
+                              {role.bullets ? (
+                                <ul className="role-bullets">
+                                  {role.bullets.map((b, bi) => <li key={bi}>{b}</li>)}
+                                </ul>
+                              ) : Array.isArray(role.body)
+                                ? role.body.map((p, pi) => <p key={pi} className={pi > 0 ? "mt-3" : ""}>{p}</p>)
+                                : <p>{role.body}</p>}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                     </div>
-                    <p>{j.body}</p>
-                  </div>
-                </div>
+                  );
+                })() : (() => {
+                  const j = entry as { when: string; title: string; org: string; orgUrl?: string; body: string | string[] };
+                  return (
+                    <div className={`job${i === 0 ? " first current" : ""}`}>
+                      <span className="job-dot" aria-hidden="true" />
+                      <div className="job-when">{j.when}</div>
+                      <div className="job-main">
+                        <div className="job-title">
+                          {j.title}{" "}
+                          <span className="job-org">
+                            ·{" "}
+                            {j.orgUrl ? (
+                              <a href={j.orgUrl} target="_blank" rel="noopener">{j.org}</a>
+                            ) : (
+                              j.org
+                            )}
+                          </span>
+                        </div>
+                        {Array.isArray(j.body)
+                          ? j.body.map((p, pi) => <p key={pi} className={pi > 0 ? "mt-3" : ""}>{p}</p>)
+                          : <p>{j.body}</p>}
+                      </div>
+                    </div>
+                  );
+                })()}
               </Reveal>
             ))}
           </div>

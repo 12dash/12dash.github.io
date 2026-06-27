@@ -36,28 +36,61 @@ export const about = {
   ],
 };
 
+export type Role = {
+  when: string;
+  title: string;
+  body?: string | string[];
+  bullets?: string[];
+};
+
 export type Job = {
+  kind?: "job";
   when: string;
   title: string;
   org: string;
   orgUrl?: string;
-  body: string;
+  body: string | string[];
 };
 
-export const jobs: Job[] = [
+export type CompanyGroup = {
+  kind: "group";
+  when: string;
+  org: string;
+  orgUrl?: string;
+  roles: Role[];
+};
+
+export type TimelineEntry = Job | CompanyGroup;
+
+export const jobs: TimelineEntry[] = [
   {
-    when: "2026 - now",
-    title: "Senior Data Scientist",
+    kind: "group",
+    when: "Jan 2024 – now",
     org: "C3 AI",
     orgUrl: "https://c3.ai",
-    body: "I'm the customer-facing lead on our largest forecasting programs, owning them from a loosely defined business problem to a system running in production. I lead demand forecasting for a leading semiconductor company and act as lead data scientist for yield forecasting at the world's largest berry producer. I also own release management for our forecasting packages and mentor data scientists across teams.",
-  },
-  {
-    when: "2024 - 26",
-    title: "Data Scientist",
-    org: "C3 AI",
-    orgUrl: "https://c3.ai",
-    body: "Worked directly with enterprise customers, turning ambiguous business problems into models that ship. I built demand and yield forecasting applications for two large customers, a RAG-based document-retrieval system for low-latency, policy-compliant search, and an internal Python deployment toolchain that took deploys from hours to minutes.",
+    roles: [
+      {
+        when: "May 2026 – Present",
+        title: "Senior Data Scientist",
+        bullets: [
+          "Customer-facing lead on our largest forecasting engagements, owning projects from problem definition to production",
+          "Lead demand forecasting for the server business unit at a leading semiconductor company",
+          "Previously led yield forecasting at the world's largest berry producer, generating ~$5M in annual value",
+          "Manage release for our forecasting packages and mentor data scientists across teams and projects",
+        ],
+      },
+      {
+        when: "Jan 2024 – Apr 2026",
+        title: "Data Scientist",
+        bullets: [
+          "Led demand forecasting for the largest CPG company in Guatemala, generating $2.3M in annual impact",
+          "Built a RAG-based LLM system for low-latency, policy-compliant document retrieval across C3 AI's internal documentation",
+          "Built and owned DRIPP, an internal Python deployment toolchain that reduced deployments from hours to minutes",
+          "Owned MetaML, the internal orchestration tool for time-series deployments",
+          "Led release management for forecasting packages, enforcing coding and packaging standards across teams",
+        ],
+      },
+    ],
   },
   {
     when: "2023",
