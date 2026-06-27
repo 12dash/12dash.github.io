@@ -12,8 +12,7 @@ export const site = {
   url: "https://sohamdandapath.com",
   github: "https://github.com/12dash",
   linkedin: "https://www.linkedin.com/in/sohamdandapath",
-  // Drop a PDF at public/Soham_Dandapath_Resume.pdf (or point this elsewhere).
-  resume: "/Soham_Dandapath_Resume.pdf",
+  resume: "https://github.com/12dash/12dash.github.io/releases/download/assets-v1/Soham_Dandapath_Resume.pdf",
 };
 
 export const nav = [
