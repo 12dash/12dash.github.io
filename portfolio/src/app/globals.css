@@ -512,6 +512,21 @@ body,
 .cs-link:hover { border-color: var(--accent-line); transform: translateY(-1px); background: var(--surface); }
 .cs-link .arr { color: var(--accent); }
 
+.cs-repo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 10px;
+  background: var(--text);
+  color: var(--bg);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  transition: transform 0.15s, opacity 0.2s;
+}
+.cs-repo:hover { transform: translateY(-1px); opacity: 0.88; }
+.cs-repo .gh-icon { flex-shrink: 0; }
+
 /* tech chips reused on case study */
 .tech-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
 
