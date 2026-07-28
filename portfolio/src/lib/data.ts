@@ -5,9 +5,9 @@
 export const site = {
   name: "Soham Dandapath",
   handle: "soham dandapath",
-  role: "Senior Data Scientist at C3 AI",
-  who: "Customer-facing data scientist. I turn fuzzy business problems into forecasting models that actually ship, like knowing how much to build before the orders arrive.",
-  now: "running forecasting programs for a couple of large enterprises, and re-reading the diffusion papers.",
+  role: "AI Engineer II at T:0 (Airwallex)",
+  who: "AI engineer working where AI meets fintech. I take fuzzy problems and carry them all the way to systems that ship and hold up under real traffic.",
+  now: "getting my bearings as an AI engineer at T:0, Airwallex's in-house startup, and still re-reading the diffusion papers.",
   email: "soham.dandapath@gmail.com",
   url: "https://sohamdandapath.com",
   github: "https://github.com/12dash",
@@ -30,8 +30,7 @@ export const intro = {
 export const about = {
   heading: "Mostly, I want to know how things actually work.",
   paragraphs: [
-    `I'm a senior data scientist at C3 AI. My path ran through Singapore and New York before the Bay Area: a BE in Computer Science from {NTU}, a stretch of internships from Shopee to Seagate, then an MS at {Columbia} with a focus in machine learning. The constant across all of it has been a stubborn kind of curiosity, the sort where I'll re-implement an idea from scratch just to find out how it actually works.`,
-    `These days that curiosity has a job. At C3 I sit with customers, translate a vague business problem into something a model can answer, and carry it all the way to production. That's mostly {probabilistic time-series forecasting}, with some {RAG-based LLM systems} along the way. I care about three things in particular: models you can interpret, deployments you can reproduce, and tooling that makes the next engineer's job easier.`,
+    `I'm an AI engineer at {T:0}, a startup inside {Airwallex}. My path ran through Singapore and New York before the Bay Area: a BE in Computer Science from {NTU}, a stretch of internships from Shopee to Seagate, then an MS at {Columbia} with a focus in machine learning. The constant across all of it has been a stubborn kind of curiosity, the sort where I'll re-implement an idea from scratch just to find out how it actually works.`,
   ],
 };
 
@@ -63,19 +62,26 @@ export type TimelineEntry = Job | CompanyGroup;
 
 export const jobs: TimelineEntry[] = [
   {
+    when: "Jul 2026 – now",
+    title: "AI Engineer II",
+    org: "T:0 · Airwallex",
+    orgUrl: "https://t0.ai",
+    body: "AI engineer at T:0, a startup building within Airwallex. Building production systems at the intersection of AI and fintech, carrying problems from framing through to systems that ship and hold up under real traffic.",
+  },
+  {
     kind: "group",
-    when: "Jan 2024 – now",
+    when: "Jan 2024 – Jun 2026",
     org: "C3 AI",
     orgUrl: "https://c3.ai",
     roles: [
       {
-        when: "May 2026 – Present",
+        when: "May 2026 – Jun 2026",
         title: "Senior Data Scientist",
         bullets: [
           "Customer-facing lead on our largest forecasting engagements, owning projects from problem definition to production",
-          "Lead demand forecasting for the server business unit at a leading semiconductor company",
-          "Previously led yield forecasting at the world's largest berry producer, generating ~$5M in annual value",
-          "Manage release for our forecasting packages and mentor data scientists across teams and projects",
+          "Led demand forecasting for the server business unit at a leading semiconductor company",
+          "Led yield forecasting at the world's largest berry producer, generating ~$5M in annual value",
+          "Managed release for our forecasting packages and mentored data scientists across teams and projects",
         ],
       },
       {

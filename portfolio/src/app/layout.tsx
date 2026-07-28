@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s · Soham Dandapath",
   },
   description:
-    "Soham Dandapath, a customer-facing senior data scientist at C3 AI who turns ambiguous business problems into forecasting models that run in production.",
+    "Soham Dandapath, an AI engineer at T:0 (Airwallex) building production AI systems where machine learning meets fintech.",
   alternates: { canonical: "/" },
   icons: {
     icon: [
@@ -27,15 +27,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Soham Dandapath",
-    title: "Soham Dandapath, Senior Data Scientist",
-    description: "Customer-facing data scientist who turns ambiguous business problems into forecasting models that run in production.",
+    title: "Soham Dandapath, AI Engineer",
+    description: "AI engineer at T:0 (Airwallex) building production AI systems where machine learning meets fintech.",
     url: "/",
     images: [{ url: "/og.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Soham Dandapath, Senior Data Scientist",
-    description: "Customer-facing data scientist who turns ambiguous business problems into forecasting models that run in production.",
+    title: "Soham Dandapath, AI Engineer",
+    description: "AI engineer at T:0 (Airwallex) building production AI systems where machine learning meets fintech.",
     images: ["/og.png"],
   },
 };
@@ -49,8 +49,8 @@ const jsonLd = {
   "@type": "Person",
   name: site.name,
   url: site.url,
-  jobTitle: "Senior Data Scientist",
-  worksFor: { "@type": "Organization", name: "C3 AI" },
+  jobTitle: "AI Engineer II",
+  worksFor: { "@type": "Organization", name: "T:0 (Airwallex)" },
   alumniOf: [
     { "@type": "CollegeOrUniversity", name: "Columbia University" },
     { "@type": "CollegeOrUniversity", name: "Nanyang Technological University" },

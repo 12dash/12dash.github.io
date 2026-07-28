@@ -24,9 +24,12 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.05}>
             <p className="prose">
-              I&apos;m a senior data scientist at C3 AI. My path ran through
-              Singapore and New York before the Bay Area: a BE in Computer
-              Science from{" "}
+              I&apos;m an AI engineer at{" "}
+              <a href="https://t0.ai" target="_blank" rel="noopener">
+                T:0
+              </a>
+              , a startup inside Airwallex. My path ran through Singapore and New
+              York before the Bay Area: a BE in Computer Science from{" "}
               <a href="https://www.ntu.edu.sg" target="_blank" rel="noopener">
                 NTU
               </a>
@@ -38,16 +41,6 @@ export default function Home() {
               has been a stubborn kind of curiosity, the sort where I&apos;ll
               re-implement an idea from scratch just to find out how it actually
               works.
-            </p>
-            <p className="prose">
-              These days that curiosity has a job. At C3 I sit with customers,
-              translate a vague business problem into something a model can
-              answer, and carry it all the way to production. That&apos;s mostly{" "}
-              <span className="em">probabilistic time-series forecasting</span>,
-              with some <span className="em">RAG-based LLM systems</span> along
-              the way. I care about three things in particular: models you can
-              interpret, deployments you can reproduce, and tooling that makes
-              the next engineer&apos;s job easier.
             </p>
           </Reveal>
         </section>
